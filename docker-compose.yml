@@ -2,12 +2,7 @@ version: '3.8'
 
 services:
   mapping-service:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    volumes:
-      - ./backend/plugins:/mapping-service/plugins
-      - ./backend/mappingSchemas:/mapping-service/mappingSchemas
+    image: vitalie97/mapping-service-backend:v1.0.2
     ports:
       - "8095:8095"
     healthcheck:
@@ -17,21 +12,12 @@ services:
       retries: 5
 
   initializer:
-    build:
-      context: ./initializer
-      dockerfile: Dockerfile
+    image: vitalie97/mapping-service-initializer:v1.0.2
     depends_on:
       mapping-service:
         condition: service_healthy
-    volumes:
-      - ./backend/mappingSchemas:/mapping-service/mappingSchemas
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: vitalie97/mapping-service-frontend:v1.0.2
     ports:
       - "80:80"
-    depends_on:
-      mapping-service:
-        condition: service_healthy
