@@ -14,8 +14,8 @@ To use this Dockerized service, you will need to have Docker and Docker Compose 
 
 1. Clone this repository to your local machine.
    ```sh
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/vitalielias/docker-mapping-service.git
+   cd docker-mapping-service
    ```
 
 2. Build and run the containers using Docker Compose.
