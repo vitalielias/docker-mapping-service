@@ -7,9 +7,10 @@ services:
       - "8095:8095"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8095"]
-      interval: 30s
+      interval: 1m
       timeout: 10s
       retries: 5
+      start_period: 1m
 
   initializer:
     image: vitalie97/mapping-service-initializer:v1.0.2
@@ -21,3 +22,6 @@ services:
     image: vitalie97/mapping-service-frontend:v1.0.2
     ports:
       - "80:80"
+    depends_on:
+      mapping-service:
+        condition: service_healthy
