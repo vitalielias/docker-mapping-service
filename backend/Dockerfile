@@ -25,9 +25,14 @@ WORKDIR /mapping-service
 RUN chmod +x ./gradlew && \
     ./gradlew build -x test
 
+# Copy the plugin to the plugins directory
+COPY plugins/semAcqPlugin-0.3.0-SNAPSHOT-plain.jar /mapping-service/plugins/
+
+# Create the mappingSchemas directory and copy the contents into it
+COPY mappingSchemas/ /mapping-service/mappingSchemas/
+
 # Expose application port
 EXPOSE 8095
 
-# The CMD command should be used to run the application when a container starts.
-# If you don't want to start the application automatically, you can comment out the CMD line.
-# CMD ["java", "-jar", "build/libs/mapping-service-1.0.2-SNAPSHOT.jar"]
+# Start the mapping service
+CMD ["java", "-jar", "build/libs/mapping-service-1.0.2.jar"]
