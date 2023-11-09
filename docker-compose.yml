@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mapping-service:
-    image: vitalie97/mapping-service-backend:v1.0.2
+    image: vitalie97/mapping-service-backend:v.1.0.3
     ports:
       - "8095:8095"
     healthcheck:
@@ -13,13 +13,13 @@ services:
       start_period: 1m
 
   initializer:
-    image: vitalie97/mapping-service-initializer:v1.0.2
+    image: vitalie97/mapping-service-initializer:v.1.0.3
     depends_on:
       mapping-service:
         condition: service_healthy
 
   frontend:
-    image: vitalie97/mapping-service-frontend:v1.0.2
+    image: vitalie97/mapping-service-frontend:v1.0.3
     ports:
       - "80:80"
     depends_on:
