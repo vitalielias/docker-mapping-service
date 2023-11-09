@@ -25,6 +25,8 @@ To use this Dockerized service, you will need to have Docker and Docker Compose 
 
 This will start the backend service, initializer, and frontend containers. The initializer container will wait for the backend service to be fully operational before executing its initialization sequence.
 
+Alternatively, Windows users may simply open the `setup.bat` file, which runs these commands automatically. Docker for Desktop must be open and running for this to work. Please have patience, the start may take several minutes, especially the first time, even if it looks like nothing is happening.
+
 ### Usage
 
 Once the containers are up and running, you can access the Mapping Service UI through your web browser by navigating to:
@@ -33,4 +35,4 @@ Once the containers are up and running, you can access the Mapping Service UI th
 http://localhost
 ```
 
-This will load the frontend interface, which interacts with the backend mapping service running locally on your machine.
+This will load the frontend interface, which interacts with the backend mapping service running locally on your machine. This may require a refresh or two sometimes to load all of the elements, these tools are still in development.
