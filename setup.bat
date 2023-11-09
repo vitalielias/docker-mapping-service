@@ -1,10 +1,5 @@
 @echo off
-cd /d "%~dp0"
-echo Starting the Docker containers...
-docker-compose up -d
-echo Containers are starting in the background.
-echo Opening the web browser...
-start http://localhost
-echo You can now access the application in your web browser.
-pause
+SET "composefile=%~dp0docker-compose.yml"
 
+echo Running Docker Compose services... this may take several minutes, especially the first time.
+docker-compose -f "%composefile%" up -d
