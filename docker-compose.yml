@@ -10,7 +10,7 @@ services:
       interval: 1m
       timeout: 10s
       retries: 5
-      start_period: 1m
+      start_period: 30s
 
   initializer:
     image: vitalie97/mapping-service-initializer:v.1.0.3

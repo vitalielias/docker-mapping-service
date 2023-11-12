@@ -23,7 +23,7 @@ To use this Dockerized service, you will need to have Docker and Docker Compose 
    docker-compose up --build
    ```
 
-This will start the backend service, initializer, and frontend containers. The initializer container will wait for the backend service to be fully operational before executing its initialization sequence.
+This will start the backend service, initializer, and frontend containers. The initializer container will wait for the backend service to be fully operational before executing its initialization sequence. This may take a while.
 
 ### Usage
 

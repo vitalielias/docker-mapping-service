@@ -8,5 +8,5 @@ COPY mappingSchemas/ /mappingSchemas/
 COPY init.sh /init.sh
 RUN chmod +x /init.sh
 
-# Command to run the initialization script
+# Run the initialization script
 CMD ["/init.sh"]

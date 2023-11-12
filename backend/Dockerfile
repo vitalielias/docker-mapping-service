@@ -15,7 +15,7 @@ RUN git clone --branch v1.0.2 --single-branch https://github.com/kit-data-manage
 # Copy the custom application.properties file into the repository
 COPY application.properties /mapping-service/application.properties
 
-# Change the TIMEOUT value in ShellRunnerUtil.java
+# Change the TIMEOUT value in ShellRunnerUtil.java to 10 minutes
 RUN sed -i 's/public static final int TIMEOUT = 30;/public static final int TIMEOUT = 600;/' /mapping-service/src/main/java/edu/kit/datamanager/mappingservice/util/ShellRunnerUtil.java
 
 # Set the working directory to the mapping-service directory
