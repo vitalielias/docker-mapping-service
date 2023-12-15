@@ -25,6 +25,10 @@ To use this Dockerized service, you will need to have Docker and Docker Compose 
 
 This will start the backend service, initializer, and frontend containers. The initializer container will wait for the backend service to be fully operational before executing its initialization sequence. This may take a while.
 
+### Alternative Installation
+
+Since the image is available on the DockerHub, you may simply download this git repository and start the container by running the provided batch file to avoid interacting with the console/command line.
+
 ### Usage
 
 Once the containers are up and running, you can access the Mapping Service UI through your web browser by navigating to:
